@@ -35,6 +35,7 @@
             echo 'Item '.$_GET['id'].' not found';
           else {
             $ratingsData = json_decode($response)->item;
+
             #display results
             echo '<h2>RATINGS AVERAGE FOR ITEM #'.$_GET['id'].'</h2>';
             echo '<p><b>ITEM ID#</b> : '.$ratingsData->id.'</p>';
@@ -60,6 +61,7 @@
           else {
             $itemInfo = json_decode($response); 
             $reviews = $itemInfo->item->reviews; #store all reviews for the item
+
             #display reviews
             echo '<h2>REVIEWS FOR ITEM # '.$_GET['id'].'</h2>';
             foreach ($reviews as $review){ 
